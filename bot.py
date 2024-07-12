@@ -410,6 +410,8 @@ class Bot:
                         if self.dt_stuck > 1:
                             print("Random direction")
                             instructions.left = None
+                            instructions.heading = None
+                            instructions.sail = None
                             instructions.right = None
                             random_vector = np.random.rand(2).tolist()
                             instructions.vector = Vector(u=random_vector[0], v=random_vector[1])
