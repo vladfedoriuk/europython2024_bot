@@ -111,12 +111,12 @@ target_net = DQN(n_observations, n_actions).to(device)
 target_net.load_state_dict(policy_net.state_dict())
 optimizer = optim.AdamW(policy_net.parameters(), lr=LR, amsgrad=True)
 
-if Path(weights_path / "policy_net.pth").exists():
-    print("Loading weights - policy")
-    policy_net.load_state_dict(torch.load(weights_path / "policy_net.pth"))
-if Path(weights_path / "target_net.pth").exists():
-    print("Loading weights - target")
-    target_net.load_state_dict(torch.load(weights_path / "target_net.pth"))
+# if Path(weights_path / "policy_net.pth").exists():
+#     print("Loading weights - policy")
+#     policy_net.load_state_dict(torch.load(weights_path / "policy_net.pth"))
+# if Path(weights_path / "target_net.pth").exists():
+#     print("Loading weights - target")
+#     target_net.load_state_dict(torch.load(weights_path / "target_net.pth"))
 
 memory = ReplayMemory(10_000)
 
