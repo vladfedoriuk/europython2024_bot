@@ -191,8 +191,9 @@ def optimize_model():
     torch.nn.utils.clip_grad_value_(policy_net.parameters(), 100)
     optimizer.step()
     if steps_done % 100 == 0:
-        torch.save(policy_net.state_dict(), weights_path / "policy_net.pth")
-        torch.save(target_net.state_dict(), weights_path / "target_net.pth")
+        # torch.save(policy_net.state_dict(), weights_path / "policy_net.pth")
+        # torch.save(target_net.state_dict(), weights_path / "target_net.pth")
+        pass
 
 
 if torch.cuda.is_available() or torch.backends.mps.is_available():
